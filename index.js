@@ -25,10 +25,11 @@ app.use(function validatonCheckpoint(req, res, next) {
 
 app.get('/movies', (req, res) => {
   const { genre, country, avg_vote } = req.query;
-  let response;
+
+  let response = movies;
 
   if (req.query.genre) {
-    response = movies.filter(movie =>
+    response = response.filter(movie =>
       movie.genre
         .toLowerCase()
         .includes(req.query.genre.toLowerCase().replace('_', ' '))
@@ -36,7 +37,7 @@ app.get('/movies', (req, res) => {
   }
 
   if (req.query.country) {
-    response = movies.filter(movie =>
+    response = response.filter(movie =>
       movie.country
         .toLowerCase()
         .includes(req.query.country.toLowerCase().replace('_', ' '))
@@ -44,7 +45,7 @@ app.get('/movies', (req, res) => {
   }
 
   if (req.query.avg_vote) {
-    response = movies.filter(movie => movie.avg_vote >= req.query.avg_vote);
+    response = response.filter(movie => movie.avg_vote >= req.query.avg_vote);
   }
 
   res.json(response);
