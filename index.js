@@ -51,6 +51,8 @@ app.get('/movies', (req, res) => {
   res.json(response);
 });
 
-app.listen(8050, () => {
+const PORT = 8050;
+
+app.listen(PORT, () => {
   console.log('listening at PORT 8050');
 });
