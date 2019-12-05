@@ -14,7 +14,6 @@ app.use(helmet());
 // Begin Auth
 app.use(function validatonCheckpoint(req, res, next) {
   const User_API_Key = req.get('Authorization');
-  console.log(User_API_Key);
   if (!User_API_Key || User_API_Key.split(' ')[1] !== API_Key) {
     return res.status(401).json({ error: 'Not a valid API key' });
   }
@@ -51,8 +50,6 @@ app.get('/movies', (req, res) => {
   res.json(response);
 });
 
-const PORT = 8050;
+const PORT = process.env.PORT || 8000;
 
-app.listen(PORT, () => {
-  console.log('listening at PORT 8050');
-});
+app.listen(PORT, () => { });

@@ -13,6 +13,9 @@
     "url": "git+https://github.com/thinkful-ei-iguana/Anthony-Maggie-Moviedex.git"
   },
   "keywords": [],
+  "engines": {
+    "node": "10.17.0"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
