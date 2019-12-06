@@ -6,13 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "predeploy": "npm audit",
+    "deploy": "git push heroku master"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thinkful-ei-iguana/Anthony-Maggie-Moviedex.git"
   },
   "keywords": [],
+  "engines": {
+    "node": "10.11.0"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
